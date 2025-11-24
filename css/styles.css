@@ -10,8 +10,21 @@
 }
 
 /* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Navigation */
@@ -72,6 +85,7 @@ body {
     cursor: pointer;
     transition: color 0.2s;
     position: relative;
+    padding: 0.5rem;
 }
 
 .icon-btn:hover {
@@ -95,9 +109,13 @@ body {
 
 /* Mobile Menu */
 .mobile-menu {
-    display: none;
     border-top: 1px solid #e5e7eb;
     padding: 0.5rem;
+    background: white;
+}
+
+.mobile-menu.hidden {
+    display: none;
 }
 
 .mobile-menu-link {
@@ -151,7 +169,7 @@ body {
 
 /* Sections */
 .section {
-    padding: 6rem 0;
+    padding: 3rem 0;
 }
 
 .container {
@@ -162,41 +180,43 @@ body {
 
 .section-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(1.875rem, 5vw, 2.5rem);
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .section-subtitle {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: #4b5563;
     max-width: 42rem;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Hero Section */
 .hero {
     padding-top: 4rem;
     background: var(--color-secondary);
-    min-height: 100vh;
+    min-height: auto;
 }
 
 .hero-grid {
     display: grid;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .badge {
@@ -205,7 +225,7 @@ body {
     padding: 0.5rem 1rem;
     background: #dbeafe;
     color: #1d4ed8;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 500;
     border-radius: 9999px;
     width: fit-content;
@@ -220,30 +240,30 @@ body {
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 8vw, 3rem);
     font-weight: 700;
     color: var(--color-primary);
     line-height: 1.2;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: #4b5563;
     line-height: 1.6;
-    max-width: 32rem;
+    max-width: 100%;
 }
 
 .hero-actions {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding-top: 2rem;
+    gap: 1rem;
+    padding-top: 1.5rem;
     border-top: 1px solid #e5e7eb;
 }
 
@@ -252,19 +272,20 @@ body {
 }
 
 .stat-value {
-    font-size: 1.875rem;
+    font-size: clamp(1.5rem, 4vw, 1.875rem);
     font-weight: 700;
     color: var(--color-primary);
 }
 
 .stat-label {
-    font-size: 0.875rem;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
     color: #4b5563;
     margin-top: 0.25rem;
 }
 
 .hero-image {
     position: relative;
+    margin-top: 2rem;
 }
 
 .hero-img {
@@ -275,30 +296,33 @@ body {
 
 .hero-img img {
     width: 100%;
-    height: 600px;
+    height: auto;
+    min-height: 400px;
+    max-height: 600px;
     object-fit: cover;
 }
 
 .floating-card {
     position: absolute;
-    bottom: 2rem;
-    left: 2rem;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
     background: white;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 0.75rem;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    max-width: 20rem;
+    max-width: calc(100% - 2rem);
 }
 
 .floating-card-content {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .floating-card-icon {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background: #d1fae5;
     border-radius: 9999px;
     display: flex;
@@ -312,8 +336,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 3rem;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
 }
 
 .filter-tab {
@@ -560,23 +584,25 @@ body {
 
 /* Newsletter */
 .newsletter {
-    padding: 6rem 0;
+    padding: 3rem 0;
     background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
     text-align: center;
 }
 
 .newsletter-form {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
     max-width: 28rem;
     margin: 0 auto;
 }
 
 .newsletter-input {
     flex: 1;
-    padding: 1rem 1.5rem;
+    padding: 0.875rem 1.25rem;
     border-radius: 0.5rem;
     border: 1px solid #d1d5db;
+    font-size: 1rem;
 }
 
 .newsletter-input:focus {
