@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Explora nuestra colección de moda sostenible. Ropa de segunda mano verificada y marcas ecológicas.">
+    <!-- Open Graph (Redes Sociales) -->
+    <meta property="og:title" content="Rewear - Catálogo de Moda Sostenible">
+    <meta property="og:description"
+        content="Compra moda consciente. Encuentra prendas únicas y sostenibles a precios increíbles.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=630&fit=crop">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rewear.com/shop">
+
+    <!-- Icono de pestaña -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>♻️</text></svg>">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/shop.css">
+
+    <title>Rewear &mdash; Catálogo</title>
+</head>
+
+<body>
+
+    <!-- ===================== NAVEGACIÓN (Sticky) ===================== -->
+    <header class="shop-header">
+        <nav class="nav-container">
+            <a href="index.html" class="nav-logo">REWEAR</a>
+
+            <div class="nav-search-bar">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input type="text" placeholder="Buscar prendas, marcas, estilos..." class="search-input">
+            </div>
+
+            <div class="nav-actions">
+                <a href="auth.html" class="nav-action-btn" aria-label="Mi Cuenta">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                </a>
+                <button class="nav-action-btn" aria-label="Favoritos">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                        </path>
+                    </svg>
+                </button>
+                <button class="nav-action-btn cart-btn" aria-label="Carrito">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <span class="cart-count">2</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===================== LAYOUT PRINCIPAL (Dos Columnas) ===================== -->
+    <div class="shop-layout container">
+
+        <!-- ===== BARRA LATERAL: FILTROS (Aside) ===== -->
+        <aside class="shop-sidebar">
+            <div class="sidebar-header">
+                <h3>Filtros</h3>
+                <button class="btn-clear-filters">Limpiar</button>
+            </div>
+
+            <form class="filters-form">
+                <!-- Filtro: Categorías (Checkbox) -->
+                <fieldset class="filter-group">
+                    <legend>Categorías</legend>
+                    <div class="checkbox-list">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="category" value="mujer" checked>
+                            <span class="custom-checkbox"></span>
+                            Mujer
+                            <span class="count">(120)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="category" value="hombre">
+                            <span class="custom-checkbox"></span>
+                            Hombre
+                            <span class="count">(85)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="category" value="accesorios">
+                            <span class="custom-checkbox"></span>
+                            Accesorios
+                            <span class="count">(42)</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- Filtro: Precio (Range) -->
+                <fieldset class="filter-group">
+                    <legend>Precio</legend>
+                    <div class="price-range">
+                        <div class="range-inputs">
+                            <input type="number" placeholder="Min" min="0" max="500">
+                            <span>-</span>
+                            <input type="number" placeholder="Max" min="0" max="500">
+                        </div>
+                        <input type="range" min="0" max="500" value="250" class="range-slider">
+                        <div class="range-labels">
+                            <span>0€</span>
+                            <span>500€+</span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Filtro: Estado (Radio) -->
+                <fieldset class="filter-group">
+                    <legend>Estado</legend>
+                    <div class="radio-list">
+                        <label class="radio-label">
+                            <input type="radio" name="condition" value="nuevo">
+                            <span class="custom-radio"></span>
+                            Nuevo con etiquetas
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="condition" value="excelente" checked>
+                            <span class="custom-radio"></span>
+                            Excelente estado
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="condition" value="bueno">
+                            <span class="custom-radio"></span>
+                            Buen estado
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- Filtro: Colores -->
+                <fieldset class="filter-group">
+                    <legend>Color</legend>
+                    <div class="color-options">
+                        <button type="button" class="color-btn bg-black" aria-label="Negro"></button>
+                        <button type="button" class="color-btn bg-white border" aria-label="Blanco"></button>
+                        <button type="button" class="color-btn bg-blue-500 active" aria-label="Azul"></button>
+                        <button type="button" class="color-btn bg-red-500" aria-label="Rojo"></button>
+                        <button type="button" class="color-btn bg-green-500" aria-label="Verde"></button>
+                        <button type="button" class="color-btn bg-yellow-500" aria-label="Amarillo"></button>
+                    </div>
+                </fieldset>
+            </form>
+
+            <!-- Banner Promocional Lateral -->
+            <div class="sidebar-promo">
+                <h4>Envío Gratis</h4>
+                <p>En pedidos superiores a 50€</p>
+            </div>
+        </aside>
+
+        <!-- ===== CONTENIDO PRINCIPAL: GRID DE PRODUCTOS (Main) ===== -->
+        <main class="shop-main">
+
+            <!-- Barra de Herramientas -->
+            <div class="shop-toolbar">
+                <p class="results-count">Mostrando <strong>1-12</strong> de <strong>247</strong> productos</p>
+
+                <div class="toolbar-actions">
+                    <button id="btn-size-guide" class="btn-text-icon">
+                        <svg class="icon-small" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
+                            </path>
+                        </svg>
+                        Guía de Tallas
+                    </button>
+
+                    <div class="sort-select-wrapper">
+                        <select class="sort-select">
+                            <option value="populares">Más Populares</option>
+                            <option value="recientes">Recientes</option>
+                            <option value="precio_asc">Precio: Menor a Mayor</option>
+                            <option value="precio_desc">Precio: Mayor a Menor</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="product-grid">
+                <!-- Producto 1 -->
+                <article class="product-card">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=800&fit=crop"
+                            alt="Zapatillas Nike Rojas" class="product-img">
+                        <div class="product-badges">
+                            <span class="badge badge-sale">-20%</span>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-cat">Calzado</p>
+                        <h3 class="product-title"><a href="#">Nike Air Max 90</a></h3>
+                        <div class="product-price">
+                            <span class="price-current">89.99€</span>
+                            <span class="price-old">112.99€</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Producto 2 -->
+                <article class="product-card">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1551028919-ac66e62469d2?w=600&h=800&fit=crop"
+                            alt="Chaqueta de cuero" class="product-img">
+                        <div class="product-badges">
+                            <span class="badge badge-new">Nuevo</span>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-cat">Abrigos</p>
+                        <h3 class="product-title"><a href="#">Chaqueta Rider Piel</a></h3>
+                        <div class="product-price">
+                            <span class="price-current">145.00€</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Producto 3 -->
+                <article class="product-card">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop"
+                            alt="Camisa estampada" class="product-img">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-cat">Camisas</p>
+                        <h3 class="product-title"><a href="#">Camisa Oxford Vintage</a></h3>
+                        <div class="product-price">
+                            <span class="price-current">35.50€</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Producto 4 -->
+                <article class="product-card">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&h=800&fit=crop"
+                            alt="Camiseta negra" class="product-img">
+                        <div class="product-badges">
+                            <span class="badge badge-eco">Eco</span>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-cat">Básicos</p>
+                        <h3 class="product-title"><a href="#">Camiseta Algodón Orgánico</a></h3>
+                        <div class="product-price">
+                            <span class="price-current">19.90€</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Producto 5 -->
+                <article class="product-card">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop"
+                            alt="Jeans desgastados" class="product-img">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-cat">Denim</p>
+                        <h3 class="product-title"><a href="#">Levi's 501 Original</a></h3>
+                        <div class="product-price">
+                            <span class="price-current">65.00€</span>
+                            <span class="price-old">98.00€</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Producto 6 -->
+                <article class="product-card">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=600&h=800&fit=crop"
+                            alt="Vestido floral" class="product-img">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-cat">Vestidos</p>
+                        <h3 class="product-title"><a href="#">Vestido Floral de Verano</a></h3>
+                        <div class="product-price">
+                            <span class="price-current">49.95€</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Paginación -->
+            <div class="pagination">
+                <a href="#" class="page-link prev disabled">&laquo; Anterior</a>
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <span class="page-dots">...</span>
+                <a href="#" class="page-link">12</a>
+                <a href="#" class="page-link next">Siguiente &raquo;</a>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- ===================== MODAL: GUÍA DE TALLAS (Tabla Semántica) ===================== -->
+    <div id="size-guide-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Guía de Tallas</h2>
+                <button id="close-modal" class="btn-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="table-caption">Medidas expresadas en centímetros (cm). Usa una cinta métrica flexible.</p>
+
+                <div class="table-responsive">
+                    <table class="size-table">
+                        <thead>
+                            <tr class="table-header-primary">
+                                <th rowspan="2">Talla Internacional</th>
+                                <th rowspan="2">Etiqueta (EU)</th>
+                                <th colspan="2">Parte Superior</th>
+                                <th colspan="2">Parte Inferior</th>
+                            </tr>
+                            <tr class="table-header-secondary">
+                                <th>Pecho</th>
+                                <th>Cintura</th>
+                                <th>Cintura</th>
+                                <th>Cadera</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">XS</td>
+                                <td>34-36</td>
+                                <td>82-86</td>
+                                <td>62-66</td>
+                                <td>62-66</td>
+                                <td>88-92</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">S</td>
+                                <td>36-38</td>
+                                <td>86-90</td>
+                                <td>66-70</td>
+                                <td>66-70</td>
+                                <td>92-96</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">M</td>
+                                <td>38-40</td>
+                                <td>90-94</td>
+                                <td>70-74</td>
+                                <td>70-74</td>
+                                <td>96-100</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">L</td>
+                                <td>40-42</td>
+                                <td>94-100</td>
+                                <td>74-80</td>
+                                <td>74-80</td>
+                                <td>100-106</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">XL</td>
+                                <td>42-44</td>
+                                <td>100-106</td>
+                                <td>80-86</td>
+                                <td>80-86</td>
+                                <td>106-112</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">* Las medidas pueden variar ligeramente según la marca.</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-got-it">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== PIE DE PÁGINA ===================== -->
+    <footer class="shop-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Rewear</h4>
+                    <p>Moda sostenible para un futuro mejor.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Tallas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rewear. Designed with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript para Modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('size-guide-modal');
+            const openBtn = document.getElementById('btn-size-guide');
+            const closeBtn = document.getElementById('close-modal');
+            const gotItBtn = document.querySelector('.btn-got-it');
+
+            function openModal() {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openModal);
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (gotItBtn) gotItBtn.addEventListener('click', closeModal);
+
+            // Cerrar al hacer click fuera
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Cerrar con ESC
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
