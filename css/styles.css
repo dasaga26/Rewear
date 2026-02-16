@@ -331,12 +331,17 @@ img {
     flex-shrink: 0;
 }
 
-/* Filter Tabs */
+/* Filter Tabs - Flexbox con wrap para responsive */
 .filter-tabs {
     display: flex;
     flex-wrap: wrap;
+    /* Permite que los items se envuelvan en múltiples líneas */
     justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Alinea verticalmente */
     gap: 0.5rem;
+    /* Espaciado moderno entre items */
     margin-bottom: 2rem;
 }
 
@@ -443,10 +448,21 @@ img {
     border-radius: 9999px;
 }
 
-.badge-new { background: #2563eb; }
-.badge-popular { background: #059669; }
-.badge-sale { background: #dc2626; }
-.badge-unique { background: #7c3aed; }
+.badge-new {
+    background: #2563eb;
+}
+
+.badge-popular {
+    background: #059669;
+}
+
+.badge-sale {
+    background: #dc2626;
+}
+
+.badge-unique {
+    background: #7c3aed;
+}
 
 .product-info {
     padding: 1.25rem;
@@ -566,9 +582,17 @@ img {
     color: #7c3aed;
 }
 
-.feature-card:hover .icon-blue { background: #bfdbfe; }
-.feature-card:hover .icon-green { background: #a7f3d0; }
-.feature-card:hover .icon-purple { background: #ddd6fe; }
+.feature-card:hover .icon-blue {
+    background: #bfdbfe;
+}
+
+.feature-card:hover .icon-green {
+    background: #a7f3d0;
+}
+
+.feature-card:hover .icon-purple {
+    background: #ddd6fe;
+}
 
 .feature-title {
     font-size: 1.25rem;
@@ -705,7 +729,7 @@ img {
     .newsletter-form {
         flex-direction: row;
     }
-    
+
     .hero-actions {
         flex-direction: row;
     }
@@ -715,31 +739,31 @@ img {
     .nav-menu {
         display: flex;
     }
-    
+
     .nav-actions {
         display: flex;
     }
-    
+
     .hero-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .features-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .footer-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-    
+
     .section-title {
         font-size: 3rem;
     }
-    
+
     .hero-title {
         font-size: 3.75rem;
     }
@@ -749,12 +773,109 @@ img {
     .container {
         padding: 0 2rem;
     }
-    
+
     .product-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-    
+
     .hero-title {
         font-size: 4.5rem;
     }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-to-top:hover {
+    background: #111827;
+    transform: translateY(0) scale(1.1);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Advanced Background Effects */
+/* Hero: Triple layer with image, gradient, and pattern */
+.hero {
+    background-image:
+        linear-gradient(135deg, rgba(249, 250, 251, 0.92) 0%, rgba(243, 244, 246, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1558769132-cb1aea941c88?w=1920&h=1080&fit=crop&q=80'),
+        url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="2" fill="%236b9c5e" opacity="0.1"/></svg>');
+    background-position: center center, top right, top left;
+    background-size: cover, cover, 60px 60px;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-attachment: scroll, fixed, fixed;
+    background-origin: padding-box, border-box, padding-box;
+    background-clip: padding-box, border-box, padding-box;
+}
+
+.newsletter {
+    background-image:
+        linear-gradient(to bottom right, rgba(249, 250, 251, 0.98), rgba(243, 244, 246, 0.95)),
+        linear-gradient(135deg, #6b9c5e 0%, #3b82f6 100%);
+    background-position: center, center;
+    background-size: cover, cover;
+    background-blend-mode: normal, overlay;
+    background-attachment: scroll, fixed;
+}
+
+.section.bg-secondary {
+    background-image:
+        linear-gradient(to bottom, rgba(249, 250, 251, 0.98), rgba(249, 250, 251, 1)),
+        url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0L50 50L0 100M100 0L50 50L100 100" stroke="%23e5e7eb" stroke-width="0.5" fill="none"/></svg>');
+    background-position: center, bottom right;
+    background-size: cover, 200px 200px;
+    background-repeat: no-repeat, repeat;
+}
+
+/* Text Formatting Enhancements */
+.section-subtitle {
+    text-indent: 0;
+    text-align: center;
+}
+
+.feature-description {
+    text-indent: 0.5rem;
+    line-height: 1.7;
+}
+
+.product-category {
+    vertical-align: middle;
+}
+
+.nav-link svg {
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+
+.footer-section h4 {
+    letter-spacing: 0.1em;
 }

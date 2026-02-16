@@ -48,8 +48,10 @@ body {
    NAVEGACIÓN (position: sticky)
    ============================================ */
 .auth-nav {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 100;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
@@ -66,6 +68,8 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .auth-nav-logo {
@@ -75,6 +79,8 @@ body {
     text-decoration: none;
     letter-spacing: -0.025em;
     transition: var(--auth-transition);
+    position: relative;
+    z-index: 1;
 }
 
 .auth-nav-logo:hover {
@@ -85,6 +91,8 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .auth-nav-link {
@@ -96,6 +104,8 @@ body {
     font-weight: 500;
     font-size: 0.9rem;
     transition: var(--auth-transition);
+    position: relative;
+    z-index: 1;
 }
 
 .auth-nav-link:hover {
@@ -113,6 +123,8 @@ body {
    ============================================ */
 .auth-main {
     min-height: calc(100vh - 4rem - 3.5rem);
+    padding-top: 4rem;
+    /* Compensa la altura del nav fijo */
 }
 
 .auth-layout {
@@ -134,7 +146,7 @@ body {
     overflow: hidden;
     min-height: 420px;
 
-    /* Múltiples capas de fondo */
+    /* Múltiples capas de fondo (sin fixed, para no romper sticky) */
     background:
         /* Capa 1: resplandor radial */
         radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
@@ -145,7 +157,6 @@ body {
 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-origin: border-box;
     background-clip: border-box;
 }
@@ -996,6 +1007,7 @@ body {
         top: 4rem;
         height: calc(100vh - 4rem);
         padding: 3rem;
+        align-self: flex-start;
     }
 
     .auth-form-panel {

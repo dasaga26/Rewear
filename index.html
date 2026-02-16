@@ -4,6 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rewear.com/">
+    <meta name="description"
+        content="Rewear - Moda sostenible premium. Compra y vende ropa de segunda mano de calidad. Únete a nuestra comunidad de más de 10.000 usuarios comprometidos con la moda consciente.">
+    <meta name="keywords"
+        content="rewear, moda sostenible, ropa segunda mano, fashion ecológica, ropa vintage, sustainable fashion">
+    <meta name="author" content="Rewear">
+    <meta name="theme-color" content="#1f2937">
+
+    <!-- Open Graph (Redes Sociales) -->
+    <meta property="og:title" content="Rewear - Moda Sostenible Premium">
+    <meta property="og:description"
+        content="Descubre prendas únicas y de calidad. Dale una segunda vida a la moda con estilo y responsabilidad. Más de 50K productos disponibles.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&h=630&fit=crop">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rewear.com">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-32x32.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -11,12 +34,49 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css">
     <title>Rewear - Moda Sostenible Premium</title>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Rewear",
+      "description": "Plataforma de moda sostenible premium. Compra y vende ropa de segunda mano de calidad.",
+      "url": "https://rewear.com",
+      "logo": "https://rewear.com/img/favicon-32x32.png",
+      "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&h=630&fit=crop",
+      "sameAs": [
+        "https://facebook.com/rewear",
+        "https://instagram.com/rewear",
+        "https://twitter.com/rewear"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "hola@rewear.com",
+        "availableLanguage": "Spanish"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Rewear",
+      "url": "https://rewear.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://rewear.com/shop.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="nav">
+    <nav id="top" class="nav">
         <div class="nav-container">
             <a href="#" class="nav-logo">REWEAR</a>
 
@@ -503,6 +563,14 @@
         </div>
     </section>
 
+    <!-- Volver arriba (position: fixed) -->
+    <a href="#top" id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18">
+            </path>
+        </svg>
+    </a>
+
     <!-- Footer -->
     <footer class="footer py-10">
         <div class="footer-content container">
@@ -565,8 +633,30 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function () {
             document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Back to top button visibility
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
     </script>
 </body>

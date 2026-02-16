@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .recycling-arrow { fill: #6b9c5e; }
+      .hanger { fill: #374151; stroke: #374151; stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+      .fabric { fill: #6b9c5e; }
+    </style>
+  </defs>
+  
+  <!-- Recycling arrows circle -->
+  <path class="recycling-arrow" d="M256 48c-114.7 0-208 93.3-208 208s93.3 208 208 208 208-93.3 208-208S370.7 48 256 48zm0 368c-88.2 0-160-71.8-160-160S167.8 96 256 96s160 71.8 160 160-71.8 160-160 160z"/>
+  
+  <!-- Three recycling arrows -->
+  <path class="recycling-arrow" d="M340 140l-20 35-35-20 35-20 20 35zM172 372l20-35 35 20-35 20-20-35zM256 100l35 20-20 35-35-20 20-35z"/>
+  <path class="recycling-arrow" d="M370 256l-50 30v-60l50 30zM142 256l50-30v60l-50-30zM256 370l-30-50h60l-30 50z"/>
+  
+  <!-- Clothing hanger -->
+  <path class="hanger" fill="none" d="M256 180c-8 0-15 7-15 15s7 15 15 15 15-7 15-15-7-15-15-15z"/>
+  <path class="hanger" fill="none" d="M180 240l76-30 76 30v40H180v-40z"/>
+  
+  <!-- Fabric piece -->
+  <path class="fabric" d="M220 280h72v45l-36 15-36-15v-45z"/>
+</svg>
