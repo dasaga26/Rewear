@@ -613,6 +613,11 @@ img {
     text-align: center;
 }
 
+/* Ancho máximo del contenido del newsletter */
+.newsletter-inner {
+    max-width: 56rem;
+}
+
 .newsletter-form {
     display: flex;
     flex-direction: column;

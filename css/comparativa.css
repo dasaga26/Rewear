@@ -1,0 +1,136 @@
+/* ============================================
+   REWEAR - Estilos Comparativa
+   Página: comparativa.html
+   ============================================ */
+
+
+/* ---- Layout principal ---- */
+.comparativa-main {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+}
+
+.comparativa-section {
+    margin-bottom: 3rem;
+}
+
+
+/* ---- Tabla de comparación ---- */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.comparison-table caption {
+    caption-side: top;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.comparison-table thead {
+    background: #f3f4f6;
+}
+
+.comparison-table th {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.comparison-table th:first-child {
+    text-align: left;
+}
+
+.comparison-table tbody tr:nth-child(odd) {
+    background: #f9fafb;
+}
+
+.comparison-table tbody tr:hover {
+    background: #e5e7eb;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.comparison-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+
+
+/* ---- Columna destacada (plan Premium / Rewear) ---- */
+.plan-highlight {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;
+    border-left: 3px solid #3b82f6;
+}
+
+/* Fila de pie de tabla - oscura */
+.tfoot-dark {
+    background: #1f2937;
+    color: white;
+}
+
+/* Celda destacada verde (mejor puntuación) */
+.tfoot-best {
+    background: #059669 !important;
+    color: white;
+}
+
+/* Fila de pie de tabla - clara */
+.tfoot-light {
+    background: #f3f4f6;
+    font-weight: 700;
+}
+
+/* Satisfacción en verde */
+.td-satisfaction {
+    font-weight: 700;
+    color: #059669;
+}
+
+/* Plan premium resaltado en azul */
+.tfoot-premium {
+    background: #3b82f6 !important;
+    color: white;
+}
+
+
+/* ---- Iconos de verificación ---- */
+.check {
+    color: #059669;
+    font-size: 1.5rem;
+}
+
+.cross {
+    color: #dc2626;
+    font-size: 1.5rem;
+}
+
+
+/* ---- Precios en cabecera ---- */
+.plan-price {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+
+/* ---- Colgroup anchos ---- */
+.col-wide {
+    width: 30%;
+}
+
+.col-third {
+    width: 23.33%;
+}

@@ -6,84 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://rewear.com/comparativa.html">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Estilos propios -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/comparativa.css">
+
     <title>Comparativa de Servicios - Rewear</title>
-    <style>
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-
-        .comparison-table caption {
-            caption-side: top;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-align: left;
-        }
-
-        .comparison-table thead {
-            background: #f3f4f6;
-        }
-
-        .comparison-table th {
-            padding: 1rem;
-            text-align: center;
-            font-weight: 600;
-            border-bottom: 2px solid #e5e7eb;
-        }
-
-        .comparison-table th:first-child {
-            text-align: left;
-        }
-
-        .comparison-table tbody tr:nth-child(odd) {
-            background: #f9fafb;
-        }
-
-        .comparison-table tbody tr:hover {
-            background: #e5e7eb;
-        }
-
-        .comparison-table td {
-            padding: 1rem;
-            text-align: center;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .comparison-table td:first-child {
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .check {
-            color: #059669;
-            font-size: 1.5rem;
-        }
-
-        .cross {
-            color: #dc2626;
-            font-size: 1.5rem;
-        }
-
-        .plan-highlight {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;
-            border-left: 3px solid #3b82f6;
-        }
-    </style>
 </head>
 
 <body class="bg-gray-50">
+
+    <!-- ===== NAVEGACIÓN ===== -->
     <nav id="top" class="nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">REWEAR</a>
@@ -97,25 +41,23 @@
         </div>
     </nav>
 
-    <main class="container" style="padding-top: 6rem; padding-bottom: 3rem;">
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <main class="container comparativa-main">
         <div class="section-header">
             <h1 class="section-title">Comparativa de Planes</h1>
             <p class="section-subtitle">Elige el plan perfecto para tus necesidades de moda sostenible</p>
         </div>
 
-        <!-- Tabla 1: Comparativa de Planes -->
-        <section style="margin-bottom: 3rem;">
+        <!-- ===== TABLA 1: Comparativa de Planes de Membresía ===== -->
+        <section class="comparativa-section">
             <table class="comparison-table" role="table" aria-labelledby="caption1">
                 <caption id="caption1">Comparativa Completa de Planes de Membresía</caption>
                 <thead>
                     <tr>
                         <th scope="col">Características</th>
-                        <th scope="col">Básico<br><span style="font-size: 0.875rem; font-weight: 400;">Gratis</span>
-                        </th>
-                        <th scope="col" class="plan-highlight">Premium<br><span
-                                style="font-size: 0.875rem; font-weight: 400;">€9.99/mes</span></th>
-                        <th scope="col">Elite<br><span style="font-size: 0.875rem; font-weight: 400;">€19.99/mes</span>
-                        </th>
+                        <th scope="col">Básico<br><span class="plan-price">Gratis</span></th>
+                        <th scope="col" class="plan-highlight">Premium<br><span class="plan-price">€9.99/mes</span></th>
+                        <th scope="col">Elite<br><span class="plan-price">€19.99/mes</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -169,33 +111,31 @@
                     </tr>
                 </tbody>
                 <tfoot>
-                    <tr style="background: #1f2937; color: white;">
+                    <tr class="tfoot-dark">
                         <th scope="row">Mejor para:</th>
                         <td>Exploradores</td>
-                        <td class="plan-highlight" style="background: #3b82f6 !important; color: white;">Compradores
-                            frecuentes</td>
+                        <td class="tfoot-premium">Compradores frecuentes</td>
                         <td>Entusiastas de la moda</td>
                     </tr>
                 </tfoot>
             </table>
         </section>
 
-        <!-- Tabla 2: Comparativa de Competidores -->
-        <section style="margin-bottom: 3rem;">
+        <!-- ===== TABLA 2: Comparativa de Competidores ===== -->
+        <section class="comparativa-section">
             <table class="comparison-table" role="table" aria-labelledby="caption2">
                 <caption id="caption2">Rewear vs. Competencia - ¿Por qué elegirnos?</caption>
                 <colgroup>
-                    <col style="width: 30%;">
-                    <col style="width: 23.33%;">
-                    <col style="width: 23.33%;" class="plan-highlight">
-                    <col style="width: 23.33%;">
+                    <col class="col-wide">
+                    <col class="col-third">
+                    <col class="col-third plan-highlight">
+                    <col class="col-third">
                 </colgroup>
                 <thead>
                     <tr>
                         <th scope="col">Aspecto</th>
                         <th scope="col">Vinted</th>
-                        <th scope="col" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);">Rewear
-                        </th>
+                        <th scope="col" class="plan-highlight">Rewear</th>
                         <th scope="col">Wallapop</th>
                     </tr>
                 </thead>
@@ -244,18 +184,18 @@
                     </tr>
                 </tbody>
                 <tfoot>
-                    <tr style="background: #f3f4f6; font-weight: 700;">
+                    <tr class="tfoot-light">
                         <th scope="row">Puntuación global</th>
                         <td>7/10</td>
-                        <td class="plan-highlight" style="background: #059669 !important; color: white;">9.5/10</td>
+                        <td class="tfoot-best">9.5/10</td>
                         <td>6/10</td>
                     </tr>
                 </tfoot>
             </table>
         </section>
 
-        <!-- Tabla 3: Histórico de Devoluciones -->
-        <section>
+        <!-- ===== TABLA 3: Histórico de Devoluciones ===== -->
+        <section class="comparativa-section">
             <table class="comparison-table" role="table" aria-labelledby="caption3">
                 <caption id="caption3">Histórico de Devoluciones - Últimos 6 Meses</caption>
                 <thead>
@@ -323,7 +263,7 @@
                     </tr>
                 </tbody>
                 <tfoot>
-                    <tr style="background: #1f2937; color: white; font-weight: 700;">
+                    <tr class="tfoot-dark">
                         <th scope="row">TOTAL</th>
                         <td>245</td>
                         <td>241</td>
@@ -331,18 +271,20 @@
                         <td>65</td>
                         <td>2.9%</td>
                     </tr>
-                    <tr style="background: #f3f4f6;">
+                    <tr class="tfoot-light">
                         <th scope="row" colspan="5">Tasa de satisfacción en devoluciones</th>
-                        <td style="font-weight: 700; color: #059669;">98.4%</td>
+                        <td class="td-satisfaction">98.4%</td>
                     </tr>
                 </tfoot>
             </table>
         </section>
     </main>
 
+    <!-- ===== BOTÓN VOLVER ARRIBA ===== -->
     <a href="#top" id="back-to-top" class="back-to-top" aria-label="Volver arriba">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18">
+            </path>
         </svg>
     </a>
 

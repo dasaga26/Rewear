@@ -130,6 +130,27 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* ---- Links extra de navegación (Inicio, Comparativa, Dashboard) ---- */
+.shop-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.shop-nav-link {
+    color: #6b7280;
+    font-size: 0.875rem;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.shop-nav-link:hover {
+    color: var(--shop-text);
+}
+
+
 /* ============================================
    LAYOUT PRINCIPAL
    ============================================ */
